@@ -1,6 +1,9 @@
+
 // upgrade to at least node@14 to require discord.js, if not 16
 const Discord = require("discord.js");
 const client = new Discord.Client();
+// ping bot to keep it running on replit indefinitely from local file
+const ping = require("./server");
 // import database library
 const Database = require("@replit/database")
 // create new database
@@ -26,7 +29,7 @@ db.get("customEncouragements").then(customEncouragements => {
   };
 });
 
-// helper function to update customEncouragements
+// helper function to update customEncouragements and push into encouragingMessage array
 const updateEncouragements = encouragingMessage => {
   db.get("customEncouragements").then(customEncouragements => {
     customEncouragements.push([encouragingMessage]);
@@ -65,15 +68,16 @@ client.on("message", msg => {
   };
 // notification for successful add
   if (msg.content.startsWith("$new")) {
-    encouragingMessage = msg.content.split("$new ")[1];
+    const encouragingMessage = msg.content.split("$new ")[1];
     updateEncouragements(encouragingMessage);
     msg.channel.send("New encouragement added!")
   }
 // notification for successful delete
   if (msg.content.startsWith("$del")) {
-    index = parseInt(msg.content.split("$del ")[1]);
+    const index = parseInt(msg.content.split("$del ")[1]) - parseInt(1);
     deleteEncouragements(index);
     msg.channel.send("Encouragement has been successfully deleted");
+    console.log(index)
   }
 // custom response to trigger words
   if (triggers.some(word => msg.content.includes(word))) {
@@ -91,4 +95,5 @@ if (msg.content.startsWith("$list")) {
 };
 });
 
+ping();
 client.login(mySecret);
