@@ -4,7 +4,6 @@ The encouraging Discord bot
 ## Table of Contents
 * [Description](#description)
 * [Usage](#usage)
-* [Deployed Application](#deployed-application)
 * [Technologies Used](#technologies-used)
 
 ## Description
