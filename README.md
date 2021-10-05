@@ -12,7 +12,10 @@ This bot can be invited to your Discord server to send encouraging quotes and me
 
 ## Usage
 **Setup**
-* Paste the following link into your web browser and select a server to invite the bot: https://discord.com/api/oauth2/authorize?client_id=891924875080503306&permissions=519232&scope=bot
+* Paste the following link into your web browser and select a server to invite the bot: 
+  ``` sh
+  https://discord.com/api/oauth2/authorize?client_id=891924875080503306&permissions=519232&scope=bot
+  ```
 * Note: You can only add bots if you are the server owner or have "Manage Server" privileges.
 
 **Bot Commands**
