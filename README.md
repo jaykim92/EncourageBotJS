@@ -7,7 +7,7 @@ The encouraging Discord bot
 * [Technologies Used](#technologies-used)
 
 ## Description
-This bot can be invited to your Discord server to send encouraging quotes and messages to its users. Encourage Bot has create, read, and delete capabilities, allowing all users to add, delete, and view a list of user-created quotes.
+This bot can be invited to your Discord server to send encouraging quotes and messages to its users. Encourage Bot fetches an inspiring quote from an API when prompted. Encourage Bot also has create, read, and delete capabilities, allowing all users to add, delete, and view a list of user-created, custom quotes. A random custom message will appear when the bot sees any of the words "sad," "depress," "disappoint," and "upset."
 
 ## Usage
 **Setup**
@@ -22,11 +22,11 @@ This bot can be invited to your Discord server to send encouraging quotes and me
   ``` sh
   $inspire
   ```
-- Add a new encouraging message
+- Add a new encouraging message to the database (in response to the trigger words: "sad", "depress", "disappoint", and "upset")
   ``` sh
   $new [message]
   ```
-- Remove a user-created encouraging message
+- Remove a user-created encouraging message (in response to the trigger words)
   ``` sh
   $del [number]
   ```
